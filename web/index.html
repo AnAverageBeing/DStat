@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server Stats</title>
+
+    <!-- External dependencies -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title" id="public-ip"></h1>
+    <script>
+      document.getElementById("public-ip").textContent = "TCP Server IP ➔ "+window.location.hostname+":1234";
+    </script>
+    <div class="container">
+      <div class="row">
+
+        <div class="card">
+          <h2>CPS</h2>
+          <p id="numConnPerSec">—</p>
+        </div>
+
+        <div class="card">
+          <h2>Active Conns</h2>
+          <p id="numActiveConn">—</p>
+        </div>
+
+        <div class="card">
+          <h2>Ips Per Sec</h2>
+          <p id="numIpsPerSec">—</p>
+        </div>
+
+        <div class="card">
+          <h2>Inbound (MBps)</h2>
+          <p id="inboundMBps">—</p>
+        </div>
+
+      </div>
+
+      <div class="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
