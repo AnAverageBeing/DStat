@@ -13,7 +13,7 @@ import (
 var (
 	loops         = flag.Int("l", 1, "loops")
 	addr          = flag.String("addr", "0.0.0.0:1234", "server address")
-	webSocketAddr = flag.String("webSocketAddr", "0.0.0.0:8080", "WebSocket server address")
+	webSocketAddr = flag.String("wsa", "0.0.0.0:8080", "WebSocket server address")
 )
 
 func main() {
