@@ -46,7 +46,7 @@ func main() {
 
 func HTTPServer() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println(time.Now().Format(time.RFC822), strings.Split(r.RemoteAddr, ":")[0], r.URL.Path)
+		fmt.Println("[HTTP] ", " | ", time.Now().Format(time.RFC822), " | ", strings.Split(r.RemoteAddr, ":")[0], " | ", r.URL.Path)
 		http.FileServer(http.Dir("web")).ServeHTTP(w, r)
 	})
 
