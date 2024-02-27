@@ -79,7 +79,7 @@ func (ws *WebSocketServer) Broadcast(data []byte) {
 	for conn := range ws.clients {
 		err := conn.WriteMessage(websocket.TextMessage, data)
 		if err != nil {
-			log.Printf("WebSocket write error: %v", err)
+			delete(ws.clients, conn)
 		}
 	}
 }

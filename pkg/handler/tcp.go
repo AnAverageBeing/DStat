@@ -55,6 +55,9 @@ func (d *DStat) BroadcastAndReset() {
 
 	d.wss.Broadcast([]byte(stats))
 
+	// log data to console
+	fmt.Println("[TCP] ", stats)
+
 	d.map_mutex.Lock()
 	d.IPsMap = make(map[string]bool)
 	d.map_mutex.Unlock()
